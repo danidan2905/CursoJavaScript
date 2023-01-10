@@ -1,2 +1,2 @@
-# CursoJavaScript
-Progreso del curso de JavaScript
+# JavaScript
+Progreso del lenguaje JavaScript
