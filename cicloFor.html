@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ciclo FOR</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Ciclos For</h1>
+        <script>
+
+            // Para el ciclo For se declara la variable que lo va a manejar, se define la condición que, mientras se cumpla,
+            // el ciclo se ejecuta y se escribe lo que va a pasar en cada iteración o "vuelta" del ciclo (mayormente es incremento
+            // o decremento de la variable control)
+            /*for(var i = 1; i < 11; i++){
+                document.write(i + "<br>")
+            }
+            document.write("<br>")
+            for(var i = 10; i > 0; i--){
+                document.write(i + "<br>")
+            }*/
+            diasSemana = [];
+            for (var a = 1; a < 8; a++){
+                dia = prompt("Dime el día " + a + " de la semana");
+                diasSemana[a - 1] = dia;
+            }
+            document.write("Los días de la semana, según el usuario son: <br>" + diasSemana.join("<br>"));
+        </script>
+    </body>
+</html>

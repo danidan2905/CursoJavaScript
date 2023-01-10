@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Scope JavaScript</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h2>Scope JavaScript</h2>
+        <script>
+            var varGlobal = "Variable global";
+            alert(varGlobal);
+
+            function funcion(){
+                var variableLocal = "Variable Local";
+
+                // Definir una variable así, hará que sea global, sin importar que esté definida dentro de una función (NO RECOMENDABLE)
+                varglobal = "Variable global definida en una función pero accedida fuera de ella";
+                alert(variableLocal);
+
+                function funcionLocal(){
+                    // Se usa la variableLocal definida en funcionLocal ya que el scope se maneja por niveles
+                    // A pesar de tener dos variables con el mismo nombre, busca y usa la más "cercana" a la función
+                    /* var variableLocal = "Variable local de una función, definida dentro de otra función"; */
+                    // Pero si comentamos la línea de arriba, la función va a buscar la variable dentro del elemento o función padre
+                    // que sería como el siguiente nivel del scope.
+                    alert(variableLocal + " accedida desde una función anidada en una más grande.");
+                }
+                /* alert("Desde una función: " + varGlobal);
+                varGlobal = "Se puede modificar las variables globales";
+                alert(varGlobal + " desde funciones"); */ 
+                funcionLocal();
+            }
+            funcion();
+
+            // Acceder a una variable local fuera de una función dará un error de código (not defined) en la consola
+            // alert(varLocal);
+            alert(varglobal);
+        </script>
+    </body>
+</html>

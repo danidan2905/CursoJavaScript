@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Condicionales JS</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            var x = 10,
+                y = 20,
+                z = 30;
+            
+            if(x == 10){
+                document.write("X es " + x)
+            }
+            // A pesar de tener if y else if con condiciones true en ambas
+            // sólo se ejecuta el primer if... interesante, ¿eh?
+            else if (y == 20){
+                document.write("JESSE!")
+            }
+            else{
+                document.write("El socialismo no funciona")
+            }
+
+            var edad = prompt("Introduce tu edad"),
+                a = 13,
+                nombre = prompt("Dime tu nombre");
+            if (edad > 30){
+                alert("Bienvenido")
+            }
+            /* else if (nombre == "Daniel"){
+                alert("Oh, eres tú... Entra")
+            }
+            // And (&&) es true cuando ambas condiciones también lo son
+            else if(edad == 20 && nombre == "Manuel"){
+                alert("¿Quién chota sos?");
+            }
+            // Or (||) es true cuando una de las condiciones también lo es
+            else if(edad == 29 || nombre == "Francisco") {
+                alert("Gordisco");
+            } */
+            // El operador === verifica si el valor y el tipo de ambos operadores es el mismo, en esta caso no lo es
+            else if(a === "13"){
+                alert("Tu edad no es " + edad);
+            }
+            // Una condición también se cumple cuando exista valor (como mínimo)
+            else if(edad){
+                alert("Tu edad es " + edad);
+            }
+            else{
+                alert("Fuera de aquí, puberto")
+            }
+        </script>
+    </body>
+</html>

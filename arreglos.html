@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Arreglos</title>
+    </head>
+    <body>
+        <h1>Arreglos</h1>
+        <script>
+        
+            var amigos = ["Carlos", "José", "Víctor", "Luis", "Guillermo", "Miguel"];
+            amigos[0] = "Mariano"
+            amigos[6] = "Diego";
+            document.write(amigos[0] + "<br>");
+            document.write(amigos[6] + "<br>");
+            var b = amigos.length;
+            document.write("N° de elementos del arreglo " + b + "<br>");
+
+            amigos.push("Juan", "Miguel");
+
+            document.write("Después del push(): " + amigos + "<br>");
+
+            amigos.pop();
+
+            document.write("Después del pop(): " + amigos + "<br>");
+
+            var amigos2 = ["Gonzáles", "Paolo", "Joel"];
+
+            document.write(amigos2 + "<br>");
+
+            var amigos3 = amigos.concat(amigos2);
+
+            document.write("Unión de amigos y amigos2: " + amigos3 + "<br>")
+
+            b = amigos3.join(" - ")
+
+            document.write("Uso del join(): " + b + "<br>");
+
+            // NOTA: Los métodos también tienen orden de ejecución (¿se puede decir así?), por ejemplo:
+            // colocar sort().join() es correcto, pero join().sort() no dará salida del arreglo (COMPROBADO)
+            document.write("Arreglo ordenado con sort(): " + amigos3.sort().join(" - "));
+
+        </script>
+    </body>
+</html>

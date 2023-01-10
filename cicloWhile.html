@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ciclo While</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Ciclo While</h1>
+        <script>
+            var diasSemana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+            var indice = diasSemana.length - 1;
+            var i = 0;
+            while(i <= indice){
+                document.write("<h3>" + diasSemana[i] + "</h3>" + "<br>");
+                i++;
+            }
+
+            var x = 1;
+            var y = 10;
+            do{
+
+                document.write("Do... while se ejecuta " + x + " vez(veces)");
+
+                y++;
+                x++;
+            } while(y == 10);
+        </script>
+    </body>
+</html>
