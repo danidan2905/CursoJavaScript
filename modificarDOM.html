@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Modificar elementos del DOM</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <ol>
+            <li><i>Coldplay</i></li>
+            <li><i>Fall Out Boy</i></li>
+        </ol>
+
+        <script>
+            var elemento = document.createElement("li"),
+                contenido = document.createTextNode("Imagine Dragons");
+
+            elemento.appendChild(contenido);
+
+            elemento.innerHTML = "<b>" + elemento.innerHTML + "</b>";
+
+            /* Para modificar:
+            // Para acceder a un elemento:
+            var primerElemento = document.getElementsByTagName("li")[0];
+            // Para acceder a su contenido:
+            primerElemento.innerHTML = "<b>Maroon 5</b>";
+            */
+
+            // Para reemplazar: 
+            var padre = document.getElementsByTagName("li")[0].parentNode;
+            padre.replaceChild(elemento, document.getElementsByTagName("li")[0]);
+            // Donde en replaceChild, el primer argumento es el elemento a añadir
+            // y el segundo es el elemento a eliminar.
+
+            // Para eliminar:
+            padre.removeChild(document.getElementsByTagName("li")[1]);
+            // Tan sencillo como eso
+        </script>
+    </body>
+</html>

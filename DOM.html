@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <ol id="lista">
+            <li>Lechuga, cebolla, pimentón</li>
+            <li>Carne, pollo, pescado</li>
+        </ol>
+        <script>
+            // Creamos el elemento
+            var elemento = document.createElement("li");
+            // Creamos el nodo de texto
+            var contenido = document.createTextNode("Maíz, arroz, grano");
+
+            // Añadimos el nodo de texto al elemento
+            elemento.appendChild(contenido);
+
+            // Añadimos el elemento al documento, al final del body
+            // document.body.appendChild(elemento);
+
+            // Pero para añadir el elemento a donde queramos:
+            // padre.appendChild(hijo);
+            // Donde padre es la etiqueta HTML que contendrá al elemento que creemos
+            // Ejemplo:
+
+            /* var padre = document.getElementById("lista"),
+                hijo = elemento;
+
+            padre.appendChild(hijo); */
+            // Y así, el elemento hijo se añadirá al final de la etiqueta ol (COMPROBADO)
+
+            // Explicando la línea de abajo:
+            // Se selecciona los elementos <li>, y como son varios se coloca el 0 entre [] para especificar que
+            // se está seleccionando el primer elemento de ese arreglo. Luego, con .parentNode
+            // estamos pidiendo que retorne el padre de ese elemento (got it?)
+            /* var hijo1 = elemento;
+            hijo1.innerHTML = "Grano, arroz, pasta";
+            var padre1 = document.getElementsByTagName("li")[0].parentNode;
+            padre1.appendChild(hijo1); */
+
+            // Para añadir el elemento al inicio del padre:
+            var padre2 = document.getElementById("lista");
+            var hijo2 = elemento;
+            padre2.insertBefore(hijo2, document.getElementsByTagName("li")[0])
+
+        </script>
+    </body>
+</html>

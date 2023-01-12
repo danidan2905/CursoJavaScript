@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Atributos DOM</title>
+        <meta charset="utf-8">
+        <style>
+            #div1{
+                background-color: orange;
+                width: 100px;
+                height: 100px;
+                border: 1px solid black;
+                border-radius: 9px;
+                margin-right: 10px;
+                float: left;
+            }
+            #div2{
+                background-color: red;
+                width: 100px;
+                height: 100px;
+                border: 1px solid black;
+                border-radius: 9px;
+                float: left;
+                margin-right: 10px;
+            }
+            #div3{
+                background-color: violet;
+                width: 100px;
+                height: 100px;
+                border: 1px solid black;
+                border-radius: 9px;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="div1">
+        </div>
+        <div id="div2">
+        </div>
+        <script>
+            var elemento = document.createElement("div");
+            elemento.setAttribute("id", "div3")
+            // También se puede modificar estilos CSS, pero como si usara atributos HTML
+            elemento.setAttribute("style", "background-color:blue")
+            // Otra forma de acceder a los atributos:
+            elemento.style = "background-color: yellow";
+            document.body.appendChild(elemento);
+        </script>
+    </body>
+</html>

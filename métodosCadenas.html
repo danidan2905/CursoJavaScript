@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Métodos y propiedades para las cadenas</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h2>Métodos y propiedades para las cadenas</h2>
+        <script>
+            var texto = "Métodos y propiedades para el texto";
+
+            document.write('<i>"' + texto + '"</i>' + "<br>")
+
+            document.write("<b>Con length, se conoce el n° de carácteres:</b> " + texto.length + "<br>");
+
+            document.write("<b>Con substring, se corta la cadena desde la posición que se le introduzca hasta el final:</b> " + texto.substring(2) + "<br>");
+
+            document.write("<b>Para extraer una porción de la cadena, se usa substr(): </b>" + texto.substr(0, 7) + "<br>");
+
+            document.write("<b>Para saber la posición de un carácter, se usa indexOf(): </b>" + texto.indexOf("x") + "<br>");
+
+            document.write("<b>Además, se puede especificar desde qué posición buscar usando un segundo parámetro: </b>" + texto.indexOf("o", 4) + "<br>");
+
+            document.write("<b>lastIndexOf() empieza a buscar desde el final hasta el principio: </b>" + texto.lastIndexOf("o") + "<br>");
+
+            document.write("<b>Con replace() se cambia el texto, o una parte de éste, por otra cadena: </b>" + texto.replace("para el texto", "hechas con sangre, sudor y gloria") + "<br>");
+
+            document.write("<b>Para convertir el texto a mayúsculas, se usa toUpperCase():</b> " + texto.toUpperCase() + "<br>");
+
+            document.write("<b>Para convertir el texto a minúsculas, se usa toLowerCase():</b> " + texto.toLowerCase() + "<br>");
+
+        </script>
+    </body>
+</html>
