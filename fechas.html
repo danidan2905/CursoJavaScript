@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fechas con JavaScript</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            // Obtener fecha:
+            var fecha = new Date();
+            document.write(fecha + "<br>");
+
+            // La hora se obtiene en formato de 24 hrs
+            document.write("Hora: " + fecha.getHours() + "<br>");
+            document.write("Minutos: " + fecha.getMinutes() + "<br>");
+            document.write("Segundos: " + fecha.getSeconds() + "<br>");
+            // El día de la semana se empieza a contar desde el 0 y desde el domingo
+            document.write("Día de semana: " + fecha.getDay() + "<br>");
+            document.write("Día de mes: " + fecha.getDate() + "<br>");
+            // El mes de enero lo obtiene como 0 xd
+            document.write("Mes: " + fecha.getMonth() + "<br>");
+            document.write("Año: " + fecha.getFullYear() + "<br>");
+        </script>
+    </body>
+</html>

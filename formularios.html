@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formularios con JS</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <form name="formulario" method="get">
+            <input type="text" placeholder="Nombre:" name="nombre" maxlength="20">
+            <br>
+            <input type="radio" value="hombre" name="sexo">Hombre
+            <input type="radio" value="mujer" name="sexo">Mujer
+            <br>
+            <input type="checkbox" value="termYcondic" name="termYcondic">Términos y condiciones
+            <br>
+            <input type="submit" value="Enviar" name="botonEnvio">
+        </form>
+        <script>
+            // Se puede acceder de dos formas a los formularios:
+            // 1.- Como si fueran arreglos, tanto los formularios como sus elementos:
+            // var x = document.forms[0].elements[0];
+            // 2.- Con el valor del atributo name de las etiquetas (FORMA RECOMENDABLE):
+            // var y = document.formulario.nombre;
+            // Para acceder al atributo de un elemento:
+            // document.formulario.elemento.atributo
+            // alert(y.type);
+            // Para enfocarse en el elemento al cargar la página se usa el método focus()
+            // y.focus();
+
+            // Validar formularios:
+            var formulario = document.getElementsByName("formulario")[0];
+            var elementos = formulario.elements;
+            var boton = document.getElementsByName("botonEnvio")[0];
+
+            // Función para validar que el usuario haya escrito algo en "nombre"
+            function validarNombre(x){
+                if (formulario.nombre.value == ""){
+                    alert("Completa el campo del nombre");
+                    x.preventDefault();
+                }
+            }
+
+            // Función para verificar si el usuario presionó en uno de los radios
+            function validarRadio(x){   
+                if (formulario.sexo[0].checked == true || formulario.sexo[1].checked == true){
+                }
+                else{
+                    alert("Completa el campo sexo");
+                    x.preventDefault();
+                }
+            }
+
+            // Función para validar el checkbox
+            function validarCheckbox(x){
+                if (formulario.termYcondic.checked == false){
+                    alert("Acepta los términos");
+                    x.preventDefault();
+                }
+            }
+
+            // Función "madre" que llamará a las demás al momento de subir los datos del formulario
+            function validacion(x){
+                validarNombre(x);
+                validarRadio(x);
+                validarCheckbox(x);
+            }
+
+            // El evento "submit" se activa cuando el usuario presione el botón de "Enviar"
+            // y envíe los datos que ingresó
+            formulario.addEventListener("submit", validacion);
+        </script>
+    </body>
+</html>

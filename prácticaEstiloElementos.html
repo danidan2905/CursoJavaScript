@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Práctica Estilo de Elementos</title>
+        <meta charset="utf-8">
+        <style>
+            .imagenGrande{
+                width: 600px;
+                height: 600px;
+                border: 3px solid navy;
+                transition: 2000ms all ease;
+            }
+            .imagenPequeña{
+                width: 60px;
+                height: 60px;
+                border: 3px solid orange;
+                transition: 300ms all ease;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <input type="button" value="Cambiar tamaño" onclick="zoom();">
+        </form>
+        <br>
+        <img id = "imagen" src="superman.jpg" alt="Superman pensando" width="400px" height="400px">
+        <script>
+            function zoom(){
+                var imagen = document.getElementById("imagen");
+                // Para verificar que al presionar el botón, se ejecute la función zoom: 
+                // alert("Función activa")
+                
+                // Los condicionales if y else son para cambiar el tamaño de la imágen, según su clase:
+                // Si la imágen es grande, su clase es imagenGrande, pasará a ser pequeña
+                if (imagen.className == "imagenGrande"){
+                    imagen.className = "imagenPequeña";
+                }
+
+                // Si no: 
+                // Asignamos el atributo 'class' con valor 'imagenGrande' a la imágen
+                // Cuando se presion el botón, la se definirá la clase para la imágen y, por consiguiente,
+                // Se cambiará el tamaño.
+                else{
+                    imagen.setAttribute("class", "imagenGrande");
+                }
+
+            }
+        </script>
+    </body>
+</html>

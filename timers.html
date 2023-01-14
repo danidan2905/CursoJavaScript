@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Timers</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+
+            var contador = 0;
+            // Timeout
+            // Ejecuta una función al acabar un tiempo especificado (en milisegundos)
+            /*function saludar(){
+                console.log("Hola después de 100 milisegundos<br>");
+                contador++;
+
+                if (contador === 10){
+                    clearInterval(x)
+                }
+
+            }
+            */
+            // Para usarla:
+            // setTimeout(saludar, 1000);
+
+            // Interval
+            // Ejecuta una función cada cierto tiempo
+            // Para usarla:
+            // var x = setInterval(saludar, 100);
+
+            // Para detener un interval
+            // clearInterval(x);
+            // Donde "x" va a ser la variable que almacene el interval
+
+            // El setTimeout también sirve para bucles infinitos (con un truco):
+            var a = 0;
+
+            function bucle(){
+                document.write("setTimeout infinito... (ejecución " + a + ")<br>");
+                a++;
+                setTimeout(bucle, 1000);
+            }
+            bucle();
+        </script>
+    </body>
+</html>

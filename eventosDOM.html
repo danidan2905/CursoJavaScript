@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Eventos DOM</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+
+        <button id="boton">Botón</button>
+        <input type="text" id="texto">
+        <a id = "enlace" href="www.google.com.ve">Enlace a google</a>
+        <script>
+            // Uso de función autoinvocada
+            (function(){
+
+                function alerta(){
+                    alert("FUNCIONÓ EL EVENTO")
+                }
+
+                function alerta2(){
+                    alert("FUNCIONÓ EL EVENTO POR SEGUNDA VEZ")
+                }
+
+                function focus(){
+                    console.log("El usuario está escribiendo");
+                }
+
+                function blur(){
+                    console.log("El usuario dejó de escribir");
+                }
+
+                function change(){
+                    console.log("El usuario escribió algo y se fue");
+                }
+
+                function evento(evento){
+                    console.log("El tipo de evento es: " + evento.type);
+                    console.log("El elemento que lo posee es: " + evento.target);
+                }
+
+                function prevenir(x){
+                    alert("No serás redirigido a la página de Google");
+                    // Se usa preventDefault() para prevenir o evitar el comportamiento por defecto de un elemento
+                    x.preventDefault();
+                }
+
+                var boton = document.getElementById("boton");
+                // Para añadir un evento:
+                boton.addEventListener("click", alerta);
+                boton.addEventListener("click", alerta2);
+                // Para eliminar un evento:
+                boton.removeEventListener("click", alerta);
+                // Para conocer el tipo de evento y el elemento que lo posee:
+                boton.addEventListener("click", evento);
+
+                var enlace = document.getElementById("enlace");
+                // Para prevenir el comportamiento por defecto:
+                enlace.addEventListener("click", prevenir);
+
+                var texto = document.getElementById("texto");
+                // Tipos de evento:
+                // focus: cuando el usuario hace click en un input de texto
+                texto.addEventListener("focus", focus);
+                // blur: cuando el usuario sale del input de texto (hace click fuera de él)
+                texto.addEventListener("blur", blur);
+                // change: cuando el usuario cambia el contenido del input y clickea afuera de él
+                texto.addEventListener("change", change);
+
+            }())
+        </script>
+    </body>
+</html>
