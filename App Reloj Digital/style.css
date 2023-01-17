@@ -1,0 +1,50 @@
+body{
+    background: url(Ciudad.jpg);
+    background-size: cover;
+    color: white;
+}
+
+.contenedor{
+    width: 100%;
+}
+
+.reloj{
+    width: 40%;
+    margin: 2px;
+}
+
+.reloj p{
+    display: inline-block;
+}
+
+.fecha{
+    font-family: Oswald;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 5px;
+    background: rgba(166, 212, 212, 0.8);
+    width: 60%;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.tiempo{
+    font-family: Oswald;
+    width: 60%;
+    font-size: 2.5em;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-align: center;
+    background-color: rgba(166, 212, 212, 0.8);
+}
+
+.cajaSegundos{
+    display: inline-block;
+}
+
+.cajaSegundos .segundos, .cajaSegundos .ampm{
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 0.7em;
+}
